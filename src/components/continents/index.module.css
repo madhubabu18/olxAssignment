@@ -1,0 +1,63 @@
+.mainContainer{
+    width: 100vw;
+    height: 100vh; 
+}
+h1{
+    color: rgb(27, 27, 22);
+}
+.contentContainer{
+    margin-top: 30px;
+    display: flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+}
+
+.continents{
+    text-align: center;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: teal;
+    border-radius: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18px;
+    color: snow;
+}
+
+.continents:hover{
+    cursor: pointer;
+}
+.header{
+    text-align: center;
+    margin-top: 20px;
+}
+.countriesContainer{
+    height: 450px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    margin-top: 10px;
+    width: 30%;
+}
+.country{
+    text-align: center;
+    margin-top: 25px;
+    padding: 10px;
+    background-color: skyblue;
+    border-radius: 10px;
+    margin-left: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: black;
+}
+p{
+    margin-top: 5px;
+}
+@media (min-width: 992px){
+    .continents{
+        width: 100%;
+    }
+    .country{
+        width: 70%;
+    }
+}
