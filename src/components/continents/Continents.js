@@ -7,6 +7,7 @@ const Continents = (props) => {
 
     const [listContinents, setListContinents] = useState([]) /* intiating the listContinets to an empty array */
     const [listCountries, setListCountries] = useState([]) /* intiating the listCountries to an empty array */
+    const [toggle, setToggle] = useState('')
     const { loading, error, data } = useQuery(CONTINENTS) /*Sending query to the endpoint using UseQuery Hook*/
 
     useEffect(async () => {
@@ -21,6 +22,7 @@ const Continents = (props) => {
     const getCountries = (continent) => {
         let country = continent.countries
         setListCountries(country)
+        setToggle(continent.code)
     }
     if (loading) return <p>Loading...</p>
     if (error) return <p>error</p>
@@ -34,7 +36,7 @@ const Continents = (props) => {
                     {/* Mapping through continents */}
                     {listContinents.map((continent, id) => {
                         return (
-                            <div className={classes.continents} key={id}>
+                            <div className={toggle !== continent.code ? classes.continents:classes.continents1}key={id}>
                                 <a className={classes.continentName} onClick={() => getCountries(continent)}>{continent.name}</a>
                             </div>
                         )
