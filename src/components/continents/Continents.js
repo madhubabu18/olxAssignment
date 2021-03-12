@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import classes from './index.module.css'
 import { useQuery, gpl } from '@apollo/client'
 import { CONTINENTS } from '../../graphql/grapgql'
+import Country from '../country/Country'
 
 const Continents = (props) => {
 
@@ -31,12 +32,12 @@ const Continents = (props) => {
             <div className={classes.header}>
                 <h1>List of continets</h1>
             </div>
-            <div className={classes.contentContainer}> 
+            <div className={classes.contentContainer}>
                 <div className={classes.continentsContainer}>
                     {/* Mapping through continents */}
                     {listContinents.map((continent, id) => {
                         return (
-                            <div className={toggle !== continent.code ? classes.continents:classes.continents1}key={id}>
+                            <div className={toggle !== continent.code ? classes.continents : classes.continentSelected} key={id}>
                                 <a className={classes.continentName} onClick={() => getCountries(continent)}>{continent.name}</a>
                             </div>
                         )
@@ -45,14 +46,12 @@ const Continents = (props) => {
                 <div className={classes.countriesContainer}>
                     {/* Mapping through country details */}
                     {listCountries.map((country, id) => {
-                        return (
-                            <div className={classes.country}>
-                                <p>Name: {country.name}</p>
-                                <p>Native: {country.native}</p>
-                                <p>Captial: {country.capital}</p>
-                                <p>Currency: {country.currency}</p>
-                            </div>
-                        )
+                        return <Country
+                            name={country.name}
+                            native={country.native}
+                            capital={country.capital}
+                            currency={country.currency}
+                        />
                     })
                     }
                 </div>

@@ -24,15 +24,16 @@ h1{
     font-size: 18px;
     color: snow;
 }
-.continents1{
+.continentSelected{
     text-align: center;
     margin-top: 20px;
     padding: 10px;
-    background-color: skyblue;
+    background-color: black;
     border-radius: 10px;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 18px;
-    color: black;
+    color: blanchedalmond;
+    opacity: 0.8;
 }
 .continents:hover{
     cursor: pointer;
@@ -48,25 +49,9 @@ h1{
     margin-top: 10px;
     width: 30%;
 }
-.country{
-    text-align: center;
-    margin-top: 25px;
-    padding: 10px;
-    background-color: skyblue;
-    border-radius: 10px;
-    margin-left: 30px;
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 15px;
-    color: black;
-}
-p{
-    margin-top: 5px;
-}
+
 @media (min-width: 992px){
     .continents{
         width: 100%;
-    }
-    .country{
-        width: 70%;
     }
 }
